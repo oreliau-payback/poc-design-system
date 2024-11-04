@@ -4,8 +4,8 @@
 
 - [Initial Setup](#initial-setup)
 - [Generate Components](#generate-components)
-- [Getting Started](#getting-started)
-- [Command Line](#command-line)
+- [Command Line Reference](#command-line-reference)
+- [Todo](#todo)
 
 ## Initial Setup
 
@@ -98,9 +98,8 @@ git commit -m "feat: add generator script for each lib"
 
 ```json
   "workspaces": [
-    "apps",
     "packages",
-    "automation",
+    "plugins",
     "storybook"
   ]
 ```
@@ -138,11 +137,13 @@ git add .
 git commit -m "feat: init storybook"
 ```
 
-## Command Line
+- Add paackages
+  
+  ```bash
+  yarn add -D "@storybook/addon-actions" "@storybook/addon-controls" "@storybook/addon-essentials" "@storybook/addon-interactions" "@storybook/addon-links" "@storybook/addon-onboarding" "@storybook/addon-ondevice-actions" "@storybook/addon-ondevice-backgrounds" "@storybook/addon-ondevice-controls" "@storybook/addon-ondevice-notes" "@storybook/addon-react-native-web" "@storybook/addon-webpack5-compiler-babel" "@storybook/blocks" "@storybook/core" "@storybook/react" "@storybook/react-native" "@storybook/react-vite" "@storybook/react-webpack5" "@storybook/test" "@chromatic-com/storybook" "eslint-plugin-storybook"
+  ```
 
-Here is the table with an additional "Title" column:
-
-### Command Line Reference
+## Command Line Reference
 
 | Title | Command  | Description |
 |-------|----------|-------------|
@@ -150,3 +151,10 @@ Here is the table with an additional "Title" column:
 | Run Parallel Tasks | `npx nx run-many -t build lint`  | `nx run-many` runs a target on multiple projects,`-t` is the target, and `build lint` are the target names.  |
 | Run Generator  | `npx nx g @nx/react-native:lib @ui/core` | `nx g` runs the generator, `@nx/react-native:lib` is the generator name, and `@ui/core` is the name of the library to create.|
 | Create Plugin  | `nx g @nx/plugin:plugin tools/my-plugin` | `nx g` runs the generator, `@nx/plugin:plugin` is the generator name, and `tools/my-plugin` is the plugin's name to create.  |
+| Run storybook web | `nx storybook web` | `nx storybook` runs the storybook, `web` is the name of the library to run.  |
+| Run storybook mobile | `nx start mobile` | `nx storybook` runs the storybook, `mobile` is the name of the library to run.  |
+
+### Todo
+
+- [ ] Make ui-web and ui-mobile, use ui-core stories by package, instead of relative path.
+- [ ] Find a solution for ui-core tests, engine web/mobile.
