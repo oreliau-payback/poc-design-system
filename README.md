@@ -62,10 +62,10 @@ git commit -m "feat: init packages"
 
 ```bash
 yarn add react-native-web styled-components && \
-yarn add -D babel-plugin-react-native-web vite-plugin-react-native-web @types/styled-components-react-native
+yarn add -D @types/styled-components-react-native
 ```
 
-- Add on [vite.config.ts](./apps/website/vite.config.ts) => [vite plugins for react-native-web](https://www.npmjs.com/package/vite-plugin-react-native-web):
+<!-- - Add on [vite.config.ts](./apps/website/vite.config.ts) => [vite plugins for react-native-web](https://www.npmjs.com/package/vite-plugin-react-native-web):
 
 ```ts
 import reactNativeWeb from "vite-plugin-react-native-web";
@@ -83,9 +83,9 @@ plugins: [
 "plugins": [
 ["react-native-web", { "commonjs": true }]
 ]
-```
+``` -->
 
-- Babel config for project [babel.config.json](./babel.config.json) =>  [styled-components](https://styled-components.com/docs/tooling#babel-plugin)
+<!-- - Babel config for project [babel.config.json](./babel.config.json) =>  [styled-components](https://styled-components.com/docs/tooling#babel-plugin)
 
 ```json
 "plugins": [
@@ -97,7 +97,7 @@ plugins: [
     }
 ]
 ]
-```
+``` -->
 
 ```bash
 git add .
@@ -108,8 +108,8 @@ git commit -m "feat: add react-native-web and styled-components"
 
 ```bash
 nx add @nx/plugin && \
-nx g @nx/plugin:plugin --name=@ds-react/automation --skipLintChecks=true --directory=automation --unitTestRunner=none --e2eTestRunner=none --skipTsConfig=true && \
-nx g @nx/plugin:generator --path=automation/src/generators/react-core-ui --name=react-core-ui --skipLintChecks=true --unitTestRunner=none && \
+nx g @nx/plugin:plugin --name=@paybackapp/ui-plugins --skipLintChecks=true --directory=plugins --unitTestRunner=none --e2eTestRunner=none --skipTsConfig=true && \
+nx g @nx/plugin:generator --path=plugins/src/component-generator --name=component-generator --skipLintChecks=true --unitTestRunner=none && \
 git add . && \
 git commit -m "feat: add generator script"
 ```
