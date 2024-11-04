@@ -1,2 +1,2 @@
-export { MyButtonCore } from '../../core/src/components/molecules/my-button-core';
-
+export { MyButtonWeb } from './components/molecules/my-button-web';
+export { MyButtonCore } from '@paybackapp/ui-core';

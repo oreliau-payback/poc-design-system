@@ -108,6 +108,7 @@ git commit -m "feat: add react-native-web and styled-components"
 nx add @nx/plugin && \
 nx g @nx/plugin:plugin --name=@paybackapp/ui-plugins --skipLintChecks=true --directory=plugins --unitTestRunner=none --e2eTestRunner=none --skipTsConfig=true && \
 nx g @nx/plugin:generator --path=plugins/src/component-generator --name=component-generator --skipLintChecks=true --unitTestRunner=none && \
+yarn add -D @testing-library/jest-dom && \
 git add . && \
 git commit -m "feat: add generator script"
 ```
@@ -143,9 +144,9 @@ yarn add -D @storybook/react @storybook/addon-actions
 - Generate components for each lib
 
 ```bash
-nx g @paybackapp/ui-plugins:component-generator  --libName=packages/core --componentName=my-button-core --atomicScope=molecules && \
-nx g @paybackapp/ui-plugins:component-generator  --libName=packages/web --componentName=my-button-web --atomicScope=molecules && \
-nx g @paybackapp/ui-plugins:component-generator  --libName=packages/mobile --componentName=my-button-mobile --atomicScope=molecules && \
+nx g @paybackapp/ui-plugins:component-generator --libName=packages/core --componentName=my-button-core --atomicScope=molecules && \
+nx g @paybackapp/ui-plugins:component-generator --libName=packages/web --componentName=my-button-web --atomicScope=molecules && \
+nx g @paybackapp/ui-plugins:component-generator --libName=packages/mobile --componentName=my-button-mobile --atomicScope=molecules && \
 echo "npx nx run-many -t test --passWithNoTests" >> .husky/pre-commit && \
 
 git add .
@@ -153,6 +154,8 @@ git commit -m "feat: generate a component"
 ```
 
 ## Setup Storybook
+
+- Add vite config for
 
 - Add Storybook for each lib
 

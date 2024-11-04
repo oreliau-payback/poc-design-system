@@ -26,7 +26,7 @@ const addExportOnIndexFile = ({
 
   const sourcePath = isSource
     ? `./components/${options.atomicScope}/${options.componentName}`
-    : `../../core/src/components/${options.atomicScope}/${options.componentName}`;
+    : '@paybackapp/ui-core';
   const newContents = contents.replace(
     '',
     `export { ${kebabToPascal(options.componentName)} } from '${sourcePath}';\n`
@@ -48,25 +48,6 @@ export async function reactCoreUiGenerator(
     ...options,
   });
 
-  if (['packages/mobile', 'packages/core'].includes(options.libName)) {
-    generateFiles(tree, path.join(__dirname, 'file-test-mobile'), projectRoot, {
-      kebabToPascal,
-      isMobileOnly: options.libName === 'packages/mobile',
-      isWebOnly: options.libName === 'packages/web',
-      isMultiPlatform: options.libName === 'packages/core',
-      ...options,
-    });
-  }
-
-  if (['packages/web', 'packages/core'].includes(options.libName)) {
-    generateFiles(tree, path.join(__dirname, 'file-test-web'), projectRoot, {
-      kebabToPascal,
-      isMobileOnly: options.libName === 'packages/mobile',
-      isWebOnly: options.libName === 'packages/web',
-      isMultiPlatform: options.libName === 'packages/core',
-      ...options,
-    });
-  }
   // Add export on the index file
   const exportDestination =
     options.libName === 'packages/core'

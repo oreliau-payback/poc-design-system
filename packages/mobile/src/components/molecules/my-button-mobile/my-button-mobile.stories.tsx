@@ -1,20 +1,20 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { <%= kebabToPascal(componentName) %> } from '.';
+import { MyButtonMobile } from '.';
 
 const meta = {
-  title: '<%= kebabToPascal(componentName) %>',
-  component: <%= kebabToPascal(componentName) %>,
+  title: 'MyButtonMobile',
+  component: MyButtonMobile,
   args: {
-    text: '<%= componentName %>',
+    text: 'my-button-mobile',
   },
   decorators: [
     (Story: React.ComponentType) => (
       <Story />
     ),
   ],
-} satisfies Meta<typeof <%= kebabToPascal(componentName) %>>;
+} satisfies Meta<typeof MyButtonMobile>;
 
 export default meta;
 
