@@ -158,3 +158,5 @@ git commit -m "feat: init storybook"
 
 - [ ] Make ui-web and ui-mobile, use ui-core stories by package, instead of relative path.
 - [ ] Find a solution for ui-core tests, engine web/mobile.
+- [ ] Fix ui-mobile storybook setup.
+- [ ] Publish packages to github packages.
