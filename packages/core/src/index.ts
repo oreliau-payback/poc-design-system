@@ -1,1 +1,2 @@
-export * from './lib/core';
+export { MyButtonCore } from './components/molecules/my-button-core';
+

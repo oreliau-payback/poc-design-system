@@ -26,7 +26,7 @@ const addExportOnIndexFile = ({
 
   const sourcePath = isSource
     ? `./components/${options.atomicScope}/${options.componentName}`
-    : `../../ui-core/src/components/${options.atomicScope}/${options.componentName}`;
+    : `../../core/src/components/${options.atomicScope}/${options.componentName}`;
   const newContents = contents.replace(
     '',
     `export { ${kebabToPascal(options.componentName)} } from '${sourcePath}';\n`
@@ -42,35 +42,35 @@ export async function reactCoreUiGenerator(
 
   generateFiles(tree, path.join(__dirname, 'files'), projectRoot, {
     kebabToPascal,
-    isMobileOnly: options.libName === 'packages/ui-mobile',
-    isWebOnly: options.libName === 'packages/ui-web',
-    isMultiPlatform: options.libName === 'packages/ui-core',
+    isMobileOnly: options.libName === 'packages/mobile',
+    isWebOnly: options.libName === 'packages/web',
+    isMultiPlatform: options.libName === 'packages/core',
     ...options,
   });
 
-  if (['packages/ui-mobile', 'packages/ui-core'].includes(options.libName)) {
+  if (['packages/mobile', 'packages/core'].includes(options.libName)) {
     generateFiles(tree, path.join(__dirname, 'file-test-mobile'), projectRoot, {
       kebabToPascal,
-      isMobileOnly: options.libName === 'packages/ui-mobile',
-      isWebOnly: options.libName === 'packages/ui-web',
-      isMultiPlatform: options.libName === 'packages/ui-core',
+      isMobileOnly: options.libName === 'packages/mobile',
+      isWebOnly: options.libName === 'packages/web',
+      isMultiPlatform: options.libName === 'packages/core',
       ...options,
     });
   }
 
-  if (['packages/ui-web', 'packages/ui-core'].includes(options.libName)) {
+  if (['packages/web', 'packages/core'].includes(options.libName)) {
     generateFiles(tree, path.join(__dirname, 'file-test-web'), projectRoot, {
       kebabToPascal,
-      isMobileOnly: options.libName === 'packages/ui-mobile',
-      isWebOnly: options.libName === 'packages/ui-web',
-      isMultiPlatform: options.libName === 'packages/ui-core',
+      isMobileOnly: options.libName === 'packages/mobile',
+      isWebOnly: options.libName === 'packages/web',
+      isMultiPlatform: options.libName === 'packages/core',
       ...options,
     });
   }
   // Add export on the index file
   const exportDestination =
-    options.libName === 'packages/ui-core'
-      ? (['packages/ui-core', 'packages/ui-mobile', 'packages/ui-web'] as const)
+    options.libName === 'packages/core'
+      ? (['packages/core', 'packages/mobile', 'packages/web'] as const)
       : [options.libName];
 
   exportDestination.forEach((libName) => {

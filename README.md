@@ -42,9 +42,15 @@ git commit -m "feat: add husky"
 ```bash
 nx add @nx/expo && \
 nx add @nx/react && \
-nx g @nx/react:lib packages/core --style=none --bundler=none --linter=eslint --unitTestRunner=jest --compiler=babel --minimal=true --importPath=@paybackapp/ui-core && \
-nx g @nx/expo:lib packages/mobile --style=none --bundler=none --linter=eslint --unitTestRunner=jest --compiler=babel --minimal=true --publishable=true --importPath=@paybackapp/ui-mobile && \
-nx g @nx/react:lib packages/web --style=none --bundler=none --linter=eslint --unitTestRunner=jest --compiler=babel --minimal=true --publishable=true --importPath=@paybackapp/ui-web && \
+nx g @nx/react:lib packages/core --style=none --bundler=vite --linter=eslint --unitTestRunner=jest --compiler=babel --minimal=true --importPath=@paybackapp/ui-core && \
+nx g @nx/expo:lib packages/mobile --style=none --bundler=vite --linter=eslint --unitTestRunner=jest --compiler=babel --minimal=true --publishable=true --importPath=@paybackapp/ui-mobile && \
+nx g @nx/react:lib packages/web --style=none --bundler=vite --linter=eslint --unitTestRunner=jest --compiler=babel --minimal=true --publishable=true --importPath=@paybackapp/ui-web && \
+rm -rf packages/core/src/lib && \
+rm -rf packages/mobile/src/lib && \
+rm -rf packages/web/src/lib && \
+echo "" > packages/core/src/index.ts && \
+echo "" > packages/mobile/src/index.ts && \
+echo "" > packages/web/src/index.ts && \
 git add . && \
 git commit -m "feat: init packages"
 ```
@@ -88,12 +94,13 @@ plugins: [
     }
 ]
 ]
-``` -->
+```
 
 ```bash
 git add .
 git commit -m "feat: add react-native-web and styled-components"
 ```
+ -->
 
 - Add dependencies for generator script
 
@@ -136,9 +143,9 @@ yarn add -D @storybook/react @storybook/addon-actions
 - Generate components for each lib
 
 ```bash
-nx g @paybackapp/ui-plugins:component-generator  --libName=packages/ui-core --componentName=my-button-core --atomicScope=molecules && \
-nx g @paybackapp/ui-plugins:component-generator  --libName=packages/ui-web --componentName=my-button-web --atomicScope=molecules && \
-nx g @paybackapp/ui-plugins:component-generator  --libName=packages/ui-mobile --componentName=my-button-mobile --atomicScope=molecules && \
+nx g @paybackapp/ui-plugins:component-generator  --libName=packages/core --componentName=my-button-core --atomicScope=molecules && \
+nx g @paybackapp/ui-plugins:component-generator  --libName=packages/web --componentName=my-button-web --atomicScope=molecules && \
+nx g @paybackapp/ui-plugins:component-generator  --libName=packages/mobile --componentName=my-button-mobile --atomicScope=molecules && \
 echo "npx nx run-many -t test --passWithNoTests" >> .husky/pre-commit && \
 
 git add .

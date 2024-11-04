@@ -56,3 +56,6 @@ npm-debug.*
 *.orig.*
 web-build/
 cache/
+
+storybook-static
+vite.config.*.timestamp*

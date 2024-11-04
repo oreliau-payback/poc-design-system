@@ -16,16 +16,16 @@
         "type": "list",
         "items": [
           {
-            "value": "ui-core",
-            "label": "ui-mobile & ui-web"
+            "value": "core",
+            "label": "mobile & web"
           },
           {
-            "value": "ui-mobile",
-            "label": "ui-mobile"
+            "value": "mobile",
+            "label": "mobile"
           },
           {
-            "value": "ui-web",
-            "label": "ui-web"
+            "value": "web",
+            "label": "web"
           }
         ]
       }
