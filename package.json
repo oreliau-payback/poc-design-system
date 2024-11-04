@@ -4,9 +4,16 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "empty": "0.10.1"
+    "empty": "0.10.1",
+    "expo": "~51.0.8",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-native": "0.74.1"
   },
   "devDependencies": {
+    "@expo/cli": "~0.18.13",
+    "@nx/expo": "20.0.8",
+    "@nx/react": "20.0.8",
     "@nx/workspace": "20.0.8",
     "husky": "^9.1.6",
     "nx": "20.0.8"
