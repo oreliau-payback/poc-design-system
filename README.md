@@ -13,9 +13,11 @@
 
 ```bash
 corepack install --global yarn@3.8.5
-npx create-nx-workspace poc-ds-react --preset=empty --pm yarn --nx-cloud=skip --style=styled-components --linter=eslint --unitTestRunner=jest --e2eTestRunner=none --useGitHub=false
-cd poc-ds-react
+npx create-nx-workspace ui --preset=empty --pm yarn --nx-cloud=skip --style=styled-components --linter=eslint --unitTestRunner=jest --e2eTestRunner=none --useGitHub=false
+cd ui
+mv ui/ .
 echo "20.10.0" > .nvmrc
+nvm install
 nvm use
 corepack use yarn@3.8.5
 echo ".yarn" >> .gitignore
@@ -33,17 +35,6 @@ npx husky init && \
 echo "npx nx run-many -t lint --fix" > .husky/pre-commit && \
 git add .
 git commit -m "feat: add husky"
-```
-
-- Add React and React Native Apps
-
-```bash
-nx add @nx/expo && \
-nx add @nx/react && \
-nx g @nx/react:app apps/website-demo --bundler=vite --style=styled-components --linter=eslint --unitTestRunner=none --routing=true --e2eTestRunner=none && \
-nx g @nx/expo:app apps/mobile-demo --unitTestRunner=none --e2eTestRunner=none --linter=eslint  && \
-git add . && \
-git commit -m "feat: init apps"
 ```
 
 - Add React Native Web lib
@@ -145,9 +136,9 @@ yarn add -D @storybook/react @storybook/addon-actions
 - Generate components for each lib
 
 ```bash
-nx g @ds-react/automation:react-core-ui --libName=packages/ui-core --componentName=my-button-core --atomicScope=molecules && \
-nx g @ds-react/automation:react-core-ui --libName=packages/ui-web --componentName=my-button-web --atomicScope=molecules && \
-nx g @ds-react/automation:react-core-ui --libName=packages/ui-mobile --componentName=my-button-mobile --atomicScope=molecules && \
+nx g @paybackapp/ui-plugins:component-generator  --libName=packages/ui-core --componentName=my-button-core --atomicScope=molecules && \
+nx g @paybackapp/ui-plugins:component-generator  --libName=packages/ui-web --componentName=my-button-web --atomicScope=molecules && \
+nx g @paybackapp/ui-plugins:component-generator  --libName=packages/ui-mobile --componentName=my-button-mobile --atomicScope=molecules && \
 echo "npx nx run-many -t test --passWithNoTests" >> .husky/pre-commit && \
 
 git add .
@@ -157,6 +148,10 @@ git commit -m "feat: generate a component"
 ## Setup Storybook
 
 - Add Storybook for each lib
+
+```bash
+
+nx add @nx/storybook 
 
 ```bash
 nx add @nx/storybook && \

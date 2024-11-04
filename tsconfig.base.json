@@ -15,12 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@payback/ui-mobile": ["packages/mobile/src/index.ts"],
-      "@payback/ui-web": ["packages/web/src/index.ts"],
       "@paybackapp/ui-core": ["packages/core/src/index.ts"],
       "@paybackapp/ui-mobile": ["packages/mobile/src/index.ts"],
-      "@paybackapp/ui-web": ["packages/web/src/index.ts"],
-      "@ui/core": ["packages/core/src/index.ts"]
+      "@paybackapp/ui-web": ["packages/web/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
