@@ -62,7 +62,7 @@ yarn add react-native-web styled-components && \
 yarn add -D @types/styled-components-react-native
 ```
 
-<!-- - Add on [vite.config.ts](./apps/website/vite.config.ts) => [vite plugins for react-native-web](https://www.npmjs.com/package/vite-plugin-react-native-web):
+- Add on [vite.config.ts](./apps/website/vite.config.ts) => [vite plugins for react-native-web](https://www.npmjs.com/package/vite-plugin-react-native-web):
 
 ```ts
 import reactNativeWeb from "vite-plugin-react-native-web";
@@ -73,34 +73,6 @@ plugins: [
 ],
 
 ```
-
-- Babel config for project [babel.config.json](./libs/ui-web/babel.config.json) => [react-native-web](https://www.npmjs.com/package/babel-plugin-react-native-web)
-
-```json
-"plugins": [
-["react-native-web", { "commonjs": true }]
-]
-``` -->
-
-<!-- - Babel config for project [babel.config.json](./babel.config.json) =>  [styled-components](https://styled-components.com/docs/tooling#babel-plugin)
-
-```json
-"plugins": [
-[
-    "styled-components",
-    {
-    "pure": true,
-    "ssr": true
-    }
-]
-]
-```
-
-```bash
-git add .
-git commit -m "feat: add react-native-web and styled-components"
-```
- -->
 
 - Add dependencies for generator script
 
@@ -160,30 +132,11 @@ git commit -m "feat: generate a component"
 - Add Storybook for each lib
 
 ```bash
-
-nx add @nx/storybook 
-
-```bash
 nx add @nx/storybook && \
-nx g @nx/react:app storybook/design-system-web --bundler=vite --style=styled-components --linter=eslint --unitTestRunner=none --routing=true --e2eTestRunner=none && \
-nx g @nx/expo:app storybook/design-system-mobile --unitTestRunner=none --e2eTestRunner=none --linter=eslint && \
+nx g @nx/react-vite:storybook-configuration web && \
 git add .
 git commit -m "feat: init storybook"
 ```
-
-- Add paackages
-  
-  ```bash
-  yarn add -D "@storybook/addon-actions" "@storybook/addon-controls" "@storybook/addon-essentials" "@storybook/addon-interactions" "@storybook/addon-links" "@storybook/addon-onboarding" "@storybook/addon-ondevice-actions" "@storybook/addon-ondevice-backgrounds" "@storybook/addon-ondevice-controls" "@storybook/addon-ondevice-notes" "@storybook/addon-react-native-web" "@storybook/addon-webpack5-compiler-babel" "@storybook/blocks" "@storybook/core" "@storybook/react" "@storybook/react-native" "@storybook/react-vite" "@storybook/react-webpack5" "@storybook/test" "@chromatic-com/storybook" "eslint-plugin-storybook"
-  ```
-
-## Getting Started
-
-- Install all dependencies `yarn install`
-
-- Run the website app `nx serve website`
-
-- Run the mobile app `nx start mobile`, tap 'a' to run on android emulator and 'i' to run on ios emulator.
 
 ## Command Line
 
