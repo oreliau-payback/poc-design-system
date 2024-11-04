@@ -1,5 +1,5 @@
 {
-  "name": "@payback/ui-mobile",
+  "name": "@paybackapp/ui-mobile",
   "version": "0.0.1",
   "main": "src/index.ts",
   "peerDependencies": {
