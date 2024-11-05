@@ -1,0 +1,17 @@
+import styled from 'styled-components';
+
+const StyleDiv = styled.div`
+    background-color: papayawhip;
+  `;
+const StyleSpan = styled.span`
+    color: #bf4f74;
+  `;
+const <%= kebabToPascal(componentName) %>Web = () => {
+  return (
+    <StyleDiv data-testid="<%= componentName %>">
+      <StyleSpan><%= componentName %></StyleSpan>
+    </StyleDiv>
+  );
+};
+
+export default <%= kebabToPascal(componentName) %>Web

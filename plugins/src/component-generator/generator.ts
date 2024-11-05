@@ -40,13 +40,47 @@ export async function reactCoreUiGenerator(
 ) {
   const projectRoot = options.libName;
 
-  generateFiles(tree, path.join(__dirname, 'files'), projectRoot, {
+  const generateFilesOptions = {
     kebabToPascal,
     isMobileOnly: options.libName === 'packages/mobile',
     isWebOnly: options.libName === 'packages/web',
     isMultiPlatform: options.libName === 'packages/core',
     ...options,
-  });
+  };
+
+  generateFiles(
+    tree,
+    path.join(__dirname, 'files'),
+    projectRoot,
+    generateFilesOptions
+  );
+
+  if (['packages/core'].includes(options.libName)) {
+    generateFiles(
+      tree,
+      path.join(__dirname, 'file-components-core'),
+      projectRoot,
+      generateFilesOptions
+    );
+  }
+
+  if (['packages/mobile', 'packages/core'].includes(options.libName)) {
+    generateFiles(
+      tree,
+      path.join(__dirname, 'file-test-mobile'),
+      projectRoot,
+      generateFilesOptions
+    );
+  }
+
+  if (['packages/web', 'packages/core'].includes(options.libName)) {
+    generateFiles(
+      tree,
+      path.join(__dirname, 'file-test-web'),
+      projectRoot,
+      generateFilesOptions
+    );
+  }
 
   // Add export on the index file
   const exportDestination =

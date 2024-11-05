@@ -55,6 +55,8 @@ git add . && \
 git commit -m "feat: init packages"
 ```
 
+- Add fix for nx + expo =>  tools/scripts/eas-build-post-install.mjs
+
 - Add React Native Web and Styled Components
 
 ```bash
@@ -128,7 +130,7 @@ git commit -m "feat: generate a component"
 
 - Add vite config for
 
-- Add Storybook for each lib
+- Add Storybook for ui-web
 
 ```bash
 nx add @nx/storybook && \
@@ -136,6 +138,10 @@ nx g @nx/react-vite:storybook-configuration web && \
 git add .
 git commit -m "feat: init storybook"
 ```
+
+- Run it with `nx storybook web`
+
+- Add Storybook for ui-mobile
 
 - Add paackages
   

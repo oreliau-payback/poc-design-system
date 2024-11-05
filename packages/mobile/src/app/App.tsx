@@ -1,7 +1,5 @@
-// import StorybookUIRoot from '../../.ondevice';
+import StorybookUIRoot from '../../.ondevice';
 
-import { View } from 'react-native';
-
-const AppEntryPoint = () => <View />;
+const AppEntryPoint = () => <StorybookUIRoot />;
 
 export default AppEntryPoint;

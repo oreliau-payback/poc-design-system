@@ -10,26 +10,26 @@ import "@storybook/addon-ondevice-actions/register";
 const normalizedStories = [
   {
     titlePrefix: "",
-    directory: "../../core",
+    directory: "../core",
     files: "**/*.stories.@(js|jsx|mjs|ts|tsx)",
     importPathMatcher:
       /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.(js|jsx|mjs|ts|tsx))$/,
     // @ts-ignore
     req: require.context(
-      "../../../core",
+      "../../core",
       true,
       /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.(js|jsx|mjs|ts|tsx))$/
     ),
   },
   {
     titlePrefix: "",
-    directory: "../../mobile",
+    directory: "./src",
     files: "**/*.stories.@(js|jsx|mjs|ts|tsx)",
     importPathMatcher:
       /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.(js|jsx|mjs|ts|tsx))$/,
     // @ts-ignore
     req: require.context(
-      "../../../mobile",
+      "../src",
       true,
       /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.(js|jsx|mjs|ts|tsx))$/
     ),

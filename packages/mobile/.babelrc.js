@@ -3,7 +3,10 @@ module.exports = function (api) {
 
   return {
     presets: ['babel-preset-expo'],
-    plugins: [],
+    plugins: [
+      '@babel/plugin-transform-class-static-block',
+      ['babel-plugin-react-docgen-typescript', { exclude: 'node_modules' }],
+    ],
     env: {
       test: {
         presets: ['babel-preset-expo'],

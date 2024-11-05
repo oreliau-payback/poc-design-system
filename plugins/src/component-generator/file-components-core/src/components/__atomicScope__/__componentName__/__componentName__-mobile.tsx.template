@@ -1,0 +1,17 @@
+import styled from 'styled-components/native';
+
+const StyledView = styled.View`
+  background-color: papayawhip;
+`;
+const StyledText = styled.Text`
+  color: #bf4f74;
+`;
+const <%= kebabToPascal(componentName) %>RN = () => {
+  return (
+    <StyledView testID="<%= componentName %>">
+      <StyledText><%= componentName %></StyledText>
+    </StyledView>
+  );
+};
+
+export default <%= kebabToPascal(componentName) %>RN

@@ -2,7 +2,7 @@
 module.exports = {
   stories: [
     '../../../core/**/*.stories.@(js|jsx|mjs|ts|tsx)',
-    '../../../mobile/**/*.stories.@(js|jsx|mjs|ts|tsx)',
+    '../../mobile/**/*.stories.@(js|jsx|mjs|ts|tsx)',
   ],
 
   addons: [

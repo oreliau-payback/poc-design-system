@@ -2,8 +2,8 @@ import { StorybookConfig } from '@storybook/react-native';
 
 const main: StorybookConfig = {
   stories: [
-    '../../../core/**/*.stories.@(js|jsx|mjs|ts|tsx)',
-    '../../../mobile/**/*.stories.@(js|jsx|mjs|ts|tsx)',
+    '../../core/**/*.stories.@(js|jsx|mjs|ts|tsx)',
+    '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)',
   ],
   addons: [
     '@storybook/addon-ondevice-notes',
