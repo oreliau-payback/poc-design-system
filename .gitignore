@@ -42,12 +42,12 @@ Thumbs.db
 
 .nx/cache
 .nx/workspace-data
-.yarn
 
 # Expo
 node_modules/
 .expo/
-.yarn/
+.yarn/cache
+.yarn/install-*
 dist/
 npm-debug.*
 *.jks
