@@ -32,6 +32,14 @@
     "android": "expo run:android",
     "ios": "expo run:ios"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/poc-design-system.git",
+    "directory": "packages/mobile"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "peerDependencies": {
     "@paybackapp/ui-core": "*"
   }
