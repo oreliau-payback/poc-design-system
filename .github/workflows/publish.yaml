@@ -25,11 +25,15 @@ jobs:
         run: corepack enable
       - name: Install Yarn
         run: corepack install --global yarn@3.8.5
+      - name: Cache Yarn Releases
+        uses: actions/cache@v2
+        with:
+          path: .yarn/releases
+          key: yarn-${{ hashFiles('.yarnrc.yml') }}
       - name: Install Node
         uses: actions/setup-node@v4
         with:
           node-version: '20.x'
-          cache: 'yarn'
 
       - name: Install dependencies
         run: yarn install --immutable
