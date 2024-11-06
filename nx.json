@@ -89,5 +89,8 @@
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
     }
+  },
+  "release": {
+    "projects": ["web", "mobile"]
   }
 }
