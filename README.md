@@ -149,6 +149,28 @@ git commit -m "feat: init storybook"
   yarn add -D "@storybook/addon-actions" "@storybook/addon-controls" "@storybook/addon-essentials" "@storybook/addon-interactions" "@storybook/addon-links" "@storybook/addon-onboarding" "@storybook/addon-ondevice-actions" "@storybook/addon-ondevice-backgrounds" "@storybook/addon-ondevice-controls" "@storybook/addon-ondevice-notes" "@storybook/addon-react-native-web" "@storybook/addon-webpack5-compiler-babel" "@storybook/blocks" "@storybook/core" "@storybook/react" "@storybook/react-native" "@storybook/react-vite" "@storybook/react-webpack5" "@storybook/test" "@chromatic-com/storybook" "eslint-plugin-storybook"
   ```
 
+## Publish
+
+- add release on [nx.json](./nx.json)
+
+```json
+  "release": {
+    "projects": ["web", "mobile"]
+  }
+```
+
+- Run dry-run release
+
+```bash
+nx release --first-release --specifier=minor
+```
+
+- Run release
+
+```bash
+nx release --first-release
+```
+
 ## Command Line Reference
 
 | Title | Command  | Description |
